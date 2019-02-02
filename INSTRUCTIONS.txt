@@ -1,0 +1,33 @@
+INSTRUCTIONS
+
+HOW TO BUILD (Linux environment):
+
+1) Open a terminal and navigate to light_detection directory
+2) In light_detection directory make a directory called build: "mkdir build"
+3) Inside build directory enter: "cmake .."
+4) Enter: "make"
+5) To run the program enter "./light-detection path/to/img_captures/"
+
+requires that cmake and gcc/g++ is installed
+and OpenCV version 2 or 3
+cmake version >= 2.8
+settings in CMakeLists.txt: -std=c++11 -g -Wall -O0
+
+
+HOW TO USE:
+
+-the pics must be taken by vt-ip-camera/test/flashing_light_test.js. They will be saved in a directory
+named by the location. inside will be img_captures/ 
+
+-PROVIDE THE PATH TO img_captures if you want to use this program stand alone.
+flashing_light_test.js will both take the images and apply this program automatically
+
+-you can try it with the sample image sets in /light_detection/light_flashing/img_captures and /light_detection/light_not_flashing/img_captures
+there is a place in process_images function where you can uncomment 2 lines to see a demonstration with target marking
+
+-the return value of this program is 0 if it doesnt find a flashing light.
+On success it will return 1 and the row, column coordinates of the light in the frame
+(for row and col upper left corner is the origin, as in opencv)
+
+-note: in node.js the "cout" output of this program is whats captured by the calling script
+so this program cout's only what it is meant to return
