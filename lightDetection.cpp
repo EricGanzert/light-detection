@@ -244,8 +244,8 @@ int process_images( Directory& testImages )
 		
 		//*****************UNCOMMENT THE FOLLOWING 2 LINES TO SEE A DEGUB DEMONSTRATION****************
 		//MUST HAVE OPENCV INSTALLED. WONT DISPLAY OVER A CONNECTION LIKE SSH(AND PROGRAM WOULD STOP).
-		imshow( "display", display );
-		waitKey(1);	
+		//imshow( "display", display );
+		//waitKey(1);	
 	}
 	if(favFreq.size() > 2)
 	{
